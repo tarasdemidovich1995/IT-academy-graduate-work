@@ -1,0 +1,49 @@
+.additional-services {
+
+    &__unit {
+        display: flex;   
+        align-items: center;
+        width: 30%;
+        margin-bottom: 20px;
+    
+        label {
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            user-select: none;
+    
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                margin-right: 15px;
+                vertical-align: middle;
+                border: 2px solid black;
+            }
+    
+            &:hover::before {
+                background-color: #d5c9bd;
+            }
+        }
+    
+        input {
+            display: none;
+            
+            &:checked + label::before {
+                content: "";
+                background: #d5c9bd url("../images/form_content/service-checked.png") no-repeat center;
+                text-align: center;
+            }
+
+        }
+    
+        @include media-max(767px) {
+            width: 49%;
+        }
+    
+        @include media-max(600px) {
+            width: 70%;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.work-done {
+
+    display: flex;
+    height: 25px;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 50px;
+        margin-right: 10px;
+        background: url("../images/our-works/work-done.png") no-repeat;
+        margin-bottom: -7px;
+    }
+
+    &::after {
+        height: 100%;
+        text-transform: uppercase;
+    }
+
+    &_haircut::after {
+        content: "Стрижка";
+    }
+
+    &_haircut::before {
+        background-position: -7% 0;
+    }
+
+    &_shaving::after {
+        content: "Борода";
+    }
+
+    &_shaving::before {
+        background-position: 46.5% 0;
+    }
+
+    &_mustache::after {
+        content: "Усы";
+    }
+
+    &_mustache::before {
+        background-position: 100% 0;
+    }
+}

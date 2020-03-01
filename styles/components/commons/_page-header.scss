@@ -1,0 +1,96 @@
+.page-header {
+    background-color: $primary-color;
+    position: relative;
+    
+    @include media-max(600px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .wrapper {
+
+        position: relative;
+        z-index: 1;
+
+        @include media-max(600px) {
+            background-color: $tetriary-color;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: $secondary-color;
+        text-transform: uppercase;
+        display: none;
+
+        @include media-max(600px) {
+            display: block;
+        }
+    }
+
+    .button_show_menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__bottom {
+        max-width: 2560px;
+        margin: 0 auto;
+        height: 720px;
+        padding-top: 50px;
+        background: $primary-color url(../images/page-header/back-desktop.jpg) no-repeat top center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        @include media-max(767px) {
+            height: 250px;
+            padding: 0;
+            align-items: center;
+        }
+
+        @include media-lock(601px, 767px) {
+            align-items: flex-start;    
+            padding-top: 75px;
+        }
+
+        @include media-max(600px) {
+            height: auto;
+            padding: 30px 0;
+            background-image: none;
+        }
+
+        &_other-pages {
+            height: 300px;
+
+            @include media-max(600px) {
+                height: auto;
+                padding: 30px 0;
+                background-image: none;
+            }
+        }
+    }
+
+    &__logo {
+        width: 370px;
+        height: 153px;
+        background: url(../images/page-header/logotype-desktop.png) no-repeat;
+
+        @include media-max(767px) {
+            height: 101px;
+            background-image: url(../images/page-header/logotype-tablet.png) no-repeat;
+        }
+
+        @include media-max(600px) {
+            width: 226px;
+            height: 30px;
+            background-image: url(../images/page-header/logotype-mobile.png);
+        }
+    }
+}

@@ -1,0 +1,126 @@
+.price-list {
+    background-color: $quatenary-color;
+    padding: 80px 0;
+    color: $secondary-color;
+
+    @include media-max(992px) {
+        padding-top: 150px;
+    }
+
+    @include media-max(600px) {
+        padding: 100px 20px 80px;
+        position: relative;
+        z-index: -2;
+    
+        &::after {
+            content: "";
+            display: block;
+            @include triangle(bottom, 50vw, 70px, $quatenary-color);
+            transform: translate(-50%,99%);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+    }
+    
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media-max(992px) {
+            flex-direction: column;
+        }
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
+
+    &__table {
+        width: 100%;
+    }
+
+    &__left {
+        display: flex;
+        justify-content: flex-start;
+        flex-grow: 1;
+        margin-right: 60px;
+
+        @include media-max(992px) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+        flex-shrink: 0;
+
+        @include media-max(992px) {
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+    }
+
+    &__discount {
+        border: 1px solid $septenary-color;
+        padding: 30px 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-max(992px) {
+            width: 100%;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        @include media-max(480px) {
+            justify-content: space-between;
+        }
+        
+        p {
+            width: 120px;
+            text-align: center;
+
+            @include media-max(992px) {
+                font-size: 1.3rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                width: auto;
+                flex-grow: 1;
+            }
+
+            @include media-max(600px) {
+                font-size: 1rem;
+                font-weight: normal;
+            }
+
+            @include media-max(480px) {
+                flex-grow: 0;
+            }
+        }
+    }
+
+    &__clock-img {
+        
+        @include media-max(992px) {
+            width: 80px;
+            height: 78px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+
+}

@@ -1,0 +1,40 @@
+.left-trapezoid, .right-trapezoid {
+    width: 50%; 
+    height: 0;
+    border: 70px solid $secondary-color;
+    border-top-width: 0;
+    position: absolute;
+    z-index: 3;
+
+    @include media-max(600px) {
+        display: none;
+    }
+
+    &_form_color {
+        border-color: #f8f5f2;
+    }
+}
+
+.left-trapezoid {
+    border-right-width: 640px;
+    border-left-width: 0;
+    border-right-color: transparent;
+    left: 0;
+    bottom: -1px;
+
+    @include media-max(1280px) {
+        border-right-width: 50vw;
+    }
+}
+
+.right-trapezoid {
+    border-left-width: 640px;
+    border-right-width: 0;
+    border-left-color: transparent;
+    right: 0;
+    bottom: -1px;
+
+    @include media-max(1280px) {
+        border-left-width: 50vw;
+    }
+}

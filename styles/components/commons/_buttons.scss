@@ -1,0 +1,180 @@
+.button {
+    font-size: 0.9rem;
+    line-height: 1;
+    text-transform: uppercase;
+
+
+    &_menu {
+        color: $secondary-color;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 60px;
+        margin: 0 2px;
+
+        @include media-max(600px) {
+            width: 100%;
+            margin: 0;
+            background-color: $tetriary-color;
+            justify-content: flex-start;
+        }
+
+        &_active {
+            
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 3px;
+                width: 60px;
+                background-color: $tetriary-color;
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                bottom: 0;
+            }
+
+            &:hover::after {
+                display: none;
+            }
+        }
+
+        
+        &:hover {
+            background-color: $secondary-color;
+            color: $primary-color;
+
+            @include media-max(600px) {
+                background-color: #755a46;
+                color: $secondary-color;
+            }
+        }
+
+        &:active {
+            color: $quinary-color;
+
+            @include media-max(600px) {
+                background-color: #6a4d38;
+                color: $quinary-color;
+
+            }
+
+        }
+
+    }
+
+    &_login {
+
+        @include media-max(600px) {
+            width: 100%;
+            margin: 0;
+        }
+
+        .image {
+            width: 16px;
+            height: 16.5px;
+            margin-right: 15px;
+            background: transparent url("../images/page-header/login.png") no-repeat 0 0; 
+
+            @include media-lock(601px, 991px) {
+                margin-right: 0;
+            }
+        }
+
+        &:hover .image {
+            background-position: 0 48%; 
+
+            @include media-max(600px) {
+                background-position: 0 0;
+            }
+        }
+
+        &:active .image {
+            background-position: 0 100%;
+
+            @include media-max(600px) {
+                background-position: 0 0;
+            }
+        }
+
+        span {
+            @include media-lock(601px, 991px) {
+                display: none;
+            }
+        }
+
+    }
+    
+    &_white {
+        height: 50px;
+        width: 160px;
+        border: 1px solid $nonary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:active {
+            background-color: $nonary-color;
+        }
+    }
+
+    &_show_menu, &_hide_menu {
+        height: 60px;
+        width: 70px;
+        border-width: 0;
+        display: none;
+
+        &:hover {
+            background-color: #624530;
+        }
+
+        @include media-max(600px) {
+            display: block;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    &_show_menu {
+        background: #6a4d38 url("../images/page-header/icon-show.png") no-repeat center; 
+    }
+
+    &_hide_menu {
+        background: #6a4d38 url("../images/page-header/icon-hide.png") no-repeat center; 
+    }
+
+    &_send {
+        font-family: inherit;
+        width: 100%;
+        font-size: 1.2rem;
+        color: $secondary-color;
+        background-color: $tetriary-color;
+        padding: 20px;
+        border-width: 0;
+    
+        &:hover {
+            background-color: $octonary-color;
+        }
+    
+        &:active {
+    
+            span {
+                opacity: .8;
+            }
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:disabled {
+            background-color: #ffffff;
+        }
+    }
+}
+
